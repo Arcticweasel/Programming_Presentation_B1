@@ -237,6 +237,8 @@ plot(x,y)
 - If you just want to <b> SHOW </b> the code: {r echo=TRUE, eval=FALSE}
 - And most important: Google is your friend! Don't hesitate...
 
+## Follow me on GitHub :-)
 
+https://github.com/MarcoLandt-Hayen/Programming_Presentation_B1.git
 
 
