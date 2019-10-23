@@ -1,0 +1,242 @@
+---
+title: "B1 - R Markdown Presentations"
+author: "Marco Landt-Hayen"
+date: "30 10 2019"
+output:
+  ioslides_presentation: 
+      widescreen: true
+      smaller: true
+      incremental: true
+---
+
+## R Markdown
+
+If you create a new **R Markdown** file and pick **Presentation**, you can choose from 4 default **output formats**:
+
+>- HTML (*output: ioslides_presentation*)
+>- HTML (*output: slidy_presentation*)
+>- pdf (*output: beamer_presentation*)
+>- ppt (*output: powerpoint_presentation*)
+
+Note: pdf output requires TeX
+```{r echo=TRUE, eval=FALSE, warning=FALSE, message=FALSE}
+tinytex::install_tinytex()
+```
+
+## Slide by Slide
+You can create a slide show broken up into sections by using the # and ## heading tags. Optionally add a subtitle after |
+
+Or you can use - - - to create a new slide without a header.
+
+```{r echo=TRUE, eval=FALSE}
+# Monday
+
+## Classes | And if you like, add a subtitle
+- Data Management
+- Programming
+
+---
+some random text
+```
+
+# Monday
+
+## Classes | And if you like, add a subtitle
+
+>- Data Management
+>- Programming
+
+```{r echo=TRUE, eval=FALSE}
+# Monday
+
+## Classes | And if you like, add a subtitle
+- Data Management
+- Programming
+
+---
+some random text
+```
+
+---
+
+some random text
+
+## Display modes and keyboard shortcuts
+
+>- w widescreen
+>- o overview
+>- p presenter mode
+>- h highlight code
+
+<div class="notes">
+This is my *note*.
+
+>- It can contain markdown
+>- like this list
+</div>
+
+Note: <b> Presenter mode </b> can be activated by opening the HTML-document in a browser adding 
+
+*?presentme=true*
+
+<b> Add notes using HTML-Code: </b>
+```{r echo=TRUE, eval=FALSE}
+<div class="notes">
+This is my *note*.
+- It can contain markdown
+- like this list
+</div>
+```
+
+## Highlight code chunk
+
+Use 'h' to highlight code
+
+```{r}
+x <- 10
+### <b>
+y <- x * 2
+### </b>
+z <- x^2
+```
+
+\### \<b>
+```{}
+y <- x * 2 
+```
+\### \</b>
+
+## Incremental bullets
+
+**Classes**
+
+- Data Management
+- Programming
+- MathStats
+- ...
+
+---
+Feature can be activated in YAML-Header
+```{r echo=TRUE, eval=FALSE}
+incremental: true
+```
+And once activated: Can be un-used by >- bullets
+
+```{r echo=TRUE, eval=FALSE}
+>- bullet one
+>- bullet two
+>- ...
+```
+
+>- bullet one
+>- bullet two
+>- ...
+
+```{r echo=TRUE, eval=FALSE}
+## Build Elements on Slide {.build}
+Elements show up one by one
+```
+
+## Tables {.build}
+
+```{r echo=TRUE, eval=FALSE}
+
+Track Name                     | Danceability (1..10) 
+------------------------------ | -------------------- 
+Sido - Schlechtes Vorbild      | 7        
+H. Fischer - Atemlos           | 9
+P. Fox - Schüttel Deinen Speck | 10
+...                            | ...
+```
+
+Track Name                     | Danceability (1..10) 
+------------------------------ | -------------------- 
+Sido - Schlechtes Vorbild      | 7        
+H. Fischer - Atemlos           | 9
+P. Fox - Schüttel Deinen Speck | 10
+...                            | ...
+  
+## Text Color
+
+<div class="green">
+This text is green.
+</div>
+
+<div class="red">
+Or how about red?
+</div>
+
+<div class="blue">
+No, I prefer blue!
+</div>
+
+<b> Using HTML-Code: </b>
+```{r echo=TRUE, eval=FALSE}
+<div class="green">
+This text is green.
+</div>
+```
+
+## Background image {data-background=background.jpg data-background-size=cover}
+
+```{r, eval=FALSE}
+## Background image {data-background=background.jpg data-background-size=cover}
+```
+## Two Column Layout
+
+<div class="columns-2">
+  ![](chimpanzee.jpg)
+
+  >- Even chimpanzees are interested in news.
+  >- Or is that a fake picture?!?
+  >- And most of all: Why BILD?
+  >- ...
+ 
+<b> Using HTML-Code: </b>
+```{eval=FALSE}
+<div class="columns-2">
+  ![](chimpanzee.jpg)
+  
+  >- bullet 1
+  >- bullet 2
+  >- ...
+</div>
+```
+</div>   
+
+## Plot plus Text
+
+<div class="columns-2">
+
+```{r echo=FALSE, warning=FALSE, error=FALSE, message=FALSE, fig.width=5, fig.height=5}
+x = c(1:10)
+y = c(1:10)
+plot(x,y)
+```
+```{r eval=FALSE}
+x = c(1:10)
+y = c(1:10)
+plot(x,y)
+```
+  >- You just see a linear line.
+  >- There is no fancy MathStats involved.
+  >- But it helps to show you the main idea.
+  >- ...
+ 
+</div>   
+
+## More Features and Cheatsheet
+
+[R Markdown Cheatsheet](https://rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
+
+[R Markdown - The Definitive Guide](https://bookdown.org/yihui/rmarkdown/presentations.html) Chapters 4 & 7
+
+## Lessons learned
+
+- Leave an empty line before using the # and ## heading tags!
+- If you just want to <b> SHOW </b> the code: {r echo=TRUE, eval=FALSE}
+- And most important: Google is your friend! Don't hesitate...
+
+
+
+
